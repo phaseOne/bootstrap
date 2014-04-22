@@ -1,206 +1,66 @@
-// Variables.less
-// Variables to customize the look and feel of Bootstrap
-// -----------------------------------------------------
+//
+// Variables
+//
+// Either Twitter Bootstrap's "variables.less" or this package's
+//  "default-variables.less" should be loaded before this file.
+// -------------------------------------------------------------
+
+@zindex-navmenu-fixed:     1030;
+@zindex-alert-fixed:       1035;
+
+@container-smooth:         @container-lg;
+
+@alert-fixed-width:        @screen-md-min;
 
 
+//== Navmenu
 
-// GLOBAL VALUES
-// --------------------------------------------------
+// Basics of a navmenu
+@navmenu-width:                     300px;
+@navmenu-margin-vertical:           (0.5 * @line-height-computed);
+@navmenu-default-color:             #777;
+@navmenu-default-bg:                #f8f8f8;
+@navmenu-default-border:            darken(@navmenu-default-bg, 6.5%);
 
+// Navmenu links
+@navmenu-default-link-color:                #777;
+@navmenu-default-link-hover-color:          #333;
+@navmenu-default-link-hover-bg:             transparent;
+@navmenu-default-link-active-color:         #555;
+@navmenu-default-link-active-bg:            darken(@navmenu-default-bg, 6.5%);
+@navmenu-default-link-disabled-color:       #ccc;
+@navmenu-default-link-disabled-bg:          transparent;
 
-// Grays
-// -------------------------
-@black:                 #000;
-@grayDarker:            #222;
-@grayDark:              #333;
-@gray:                  #555;
-@grayLight:             #999;
-@grayLighter:           #eee;
-@white:                 #fff;
-
-
-// Accent colors
-// -------------------------
-@blue:                  #049cdb;
-@blueDark:              #0064cd;
-@green:                 #46a546;
-@red:                   #9d261d;
-@yellow:                #ffc40d;
-@orange:                #f89406;
-@pink:                  #c3325f;
-@purple:                #7a43b6;
+// Navmenu brand label
+@navmenu-default-brand-color:               @navmenu-default-link-color;
+@navmenu-default-brand-hover-color:         darken(@navmenu-default-link-color, 10%);
+@navmenu-default-brand-hover-bg:            transparent;
 
 
-// Scaffolding
-// -------------------------
-@bodyBackground:        @white;
-@textColor:             @grayDark;
+// Inverted navmenu
+//
+// Reset inverted navmenu basics
+@navmenu-inverse-color:                      @gray-light;
+@navmenu-inverse-bg:                         #222;
+@navmenu-inverse-border:                     darken(@navmenu-inverse-bg, 10%);
 
+// Inverted navmenu links
+@navmenu-inverse-link-color:                 @gray-light;
+@navmenu-inverse-link-hover-color:           #fff;
+@navmenu-inverse-link-hover-bg:              transparent;
+@navmenu-inverse-link-active-color:          @navmenu-inverse-link-hover-color;
+@navmenu-inverse-link-active-bg:             darken(@navmenu-inverse-bg, 10%);
+@navmenu-inverse-link-disabled-color:        #444;
+@navmenu-inverse-link-disabled-bg:           transparent;
 
-// Links
-// -------------------------
-@linkColor:             #08c;
-@linkColorHover:        darken(@linkColor, 15%);
+// Inverted navmenu brand label
+@navmenu-inverse-brand-color:                @navmenu-inverse-link-color;
+@navmenu-inverse-brand-hover-color:          #fff;
+@navmenu-inverse-brand-hover-bg:             transparent;
 
-
-// Typography
-// -------------------------
-@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
-@monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace;
-
-@baseFontSize:          13px;
-@baseFontFamily:        @sansFontFamily;
-@baseLineHeight:        18px;
-@altFontFamily:         @serifFontFamily;
-
-@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
-@headingsFontWeight:    bold;    // instead of browser default, bold
-@headingsColor:         inherit; // empty to use BS default, @textColor
-
-
-// Tables
-// -------------------------
-@tableBackground:                   transparent; // overall background-color
-@tableBackgroundAccent:             #f9f9f9; // for striping
-@tableBackgroundHover:              #f5f5f5; // for hover
-@tableBorder:                       #ddd; // table and cell border
-
-
-// Buttons
-// -------------------------
-@btnBackground:                     @white;
-@btnBackgroundHighlight:            darken(@white, 10%);
-@btnBorder:                         #ccc;
-
-@btnPrimaryBackground:              @linkColor;
-@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 15%);
-
-@btnInfoBackground:                 #5bc0de;
-@btnInfoBackgroundHighlight:        #2f96b4;
-
-@btnSuccessBackground:              #62c462;
-@btnSuccessBackgroundHighlight:     #51a351;
-
-@btnWarningBackground:              lighten(@orange, 15%);
-@btnWarningBackgroundHighlight:     @orange;
-
-@btnDangerBackground:               #ee5f5b;
-@btnDangerBackgroundHighlight:      #bd362f;
-
-@btnInverseBackground:              @gray;
-@btnInverseBackgroundHighlight:     @grayDarker;
-
-
-// Forms
-// -------------------------
-@inputBackground:               @white;
-@inputBorder:                   #ccc;
-@inputBorderRadius:             3px;
-@inputDisabledBackground:       @grayLighter;
-@formActionsBackground:         #f5f5f5;
-
-// Dropdowns
-// -------------------------
-@dropdownBackground:            @white;
-@dropdownBorder:                rgba(0,0,0,.2);
-@dropdownLinkColor:             @grayDark;
-@dropdownLinkColorHover:        @white;
-@dropdownLinkBackgroundHover:   @linkColor;
-@dropdownDividerTop:            #e5e5e5;
-@dropdownDividerBottom:         @white;
-
-
-
-// COMPONENT VARIABLES
-// --------------------------------------------------
-
-// Z-index master list
-// -------------------------
-// Used for a bird's eye view of components dependent on the z-axis
-// Try to avoid customizing these :)
-@zindexDropdown:          1000;
-@zindexPopover:           1010;
-@zindexTooltip:           1020;
-@zindexFixedNavbar:       1030;
-@zindexModalBackdrop:     1040;
-@zindexModal:             1050;
-
-
-// Sprite icons path
-// -------------------------
-@iconSpritePath:          "../img/glyphicons-halflings.png";
-@iconWhiteSpritePath:     "../img/glyphicons-halflings-white.png";
-
-
-// Input placeholder text color
-// -------------------------
-@placeholderText:         @grayLight;
-
-
-// Hr border color
-// -------------------------
-@hrBorder:                @grayLighter;
-
-
-// Navbar
-// -------------------------
-@navbarHeight:                    40px;
-@navbarBackground:                @grayDarker;
-@navbarBackgroundHighlight:       @grayDark;
-
-@navbarText:                      @grayLight;
-@navbarLinkColor:                 @grayLight;
-@navbarLinkColorHover:            @white;
-@navbarLinkColorActive:           @navbarLinkColorHover;
-@navbarLinkBackgroundHover:       transparent;
-@navbarLinkBackgroundActive:      @navbarBackground;
-
-@navbarSearchBackground:          lighten(@navbarBackground, 25%);
-@navbarSearchBackgroundFocus:     @white;
-@navbarSearchBorder:              darken(@navbarSearchBackground, 30%);
-@navbarSearchPlaceholderColor:    #ccc;
-@navbarBrandColor:                @navbarLinkColor;
-
-
-// Hero unit
-// -------------------------
-@heroUnitBackground:              @grayLighter;
-@heroUnitHeadingColor:            inherit;
-@heroUnitLeadColor:               inherit;
-
-
-// Form states and alerts
-// -------------------------
-@warningText:             #c09853;
-@warningBackground:       #fcf8e3;
-@warningBorder:           darken(spin(@warningBackground, -10), 3%);
-
-@errorText:               #b94a48;
-@errorBackground:         #f2dede;
-@errorBorder:             darken(spin(@errorBackground, -10), 3%);
-
-@successText:             #468847;
-@successBackground:       #dff0d8;
-@successBorder:           darken(spin(@successBackground, -10), 5%);
-
-@infoText:                #3a87ad;
-@infoBackground:          #d9edf7;
-@infoBorder:              darken(spin(@infoBackground, -10), 7%);
-
-
-
-// GRID
-// --------------------------------------------------
-
-// Default 940px grid
-// -------------------------
-@gridColumns:             12;
-@gridColumnWidth:         60px;
-@gridGutterWidth:         20px;
-@gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
-
-// Fluid grid
-// -------------------------
-@fluidGridColumnWidth:    6.382978723%;
-@fluidGridGutterWidth:    2.127659574%;
+// Inverted navmenu search
+// Normal navmenu needs no special styles or vars
+@navmenu-inverse-search-bg:                  lighten(@navmenu-inverse-bg, 25%);
+@navmenu-inverse-search-bg-focus:            #fff;
+@navmenu-inverse-search-border:              @navmenu-inverse-bg;
+@navmenu-inverse-search-placeholder-color:   #ccc;

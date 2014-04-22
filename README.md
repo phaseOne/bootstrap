@@ -1,137 +1,156 @@
-[Twitter Bootstrap](http://twitter.github.com/bootstrap) [![Build Status](https://secure.travis-ci.org/twitter/bootstrap.png)](http://travis-ci.org/twitter/bootstrap)
-=================
+# [Jasny Bootstrap](http://jasny.github.io/bootstrap/) [![Build Status](https://secure.travis-ci.org/jasny/bootstrap.png)](http://travis-ci.org/jasny/bootstrap)[![devDependency Status](https://david-dm.org/jasny/bootstrap/dev-status.png)](https://david-dm.org/jasny/bootstrap#info=devDependencies)
 
-Bootstrap provides simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions. In other words, it's a front-end toolkit for faster, more beautiful web development. It's created and maintained by [Mark Otto](http://twitter.com/mdo) and [Jacob Thornton](http://twitter.com/fat) at Twitter.
+Jasny Bootstrap is an extension of the famous [Twitter Bootstrap](http://getbootstrap.com/), adding the following components:
 
-To get started, checkout http://twitter.github.com/bootstrap!
+* [Button labels](http://jasny.github.io/bootstrap/css/#buttons-labels)
+* [Off canvas navmenu](http://jasny.github.io/bootstrap/components/#navmenu)
+* [Fixed alerts](http://jasny.github.io/bootstrap/components/#alerts-fixed)
+* [Row link](http://jasny.github.io/bootstrap/javascript/#rowlink)
+* [Input mask](http://jasny.github.io/bootstrap/javascript/#inputmask)
+* [File input widget](http://jasny.github.io/bootstrap/javascript/#fileinput)
 
-
-
-Quick start
------------
-
-Clone the repo, `git clone git://github.com/twitter/bootstrap.git`, or [download the latest release](https://github.com/twitter/bootstrap/zipball/master).
-
+To get started, check out <http://jasny.github.io/bootstrap>!
 
 
-Versioning
-----------
+## Quick start
 
-For transparency and insight into our release cycle, and for striving to maintain backward compatibility, Bootstrap will be maintained under the Semantic Versioning guidelines as much as possible.
+Three quick start options are available:
 
-Releases will be numbered with the follow format:
+* [Download the latest release](https://github.com/jasny/bootstrap/releases/download/v3.1.0/jasny-bootstrap-3.1.0-dist.zip).
+* Clone the repo: `git clone git://github.com/jasny/bootstrap.git`.
+* Install with [Bower](http://bower.io): `bower install bootstrap=jasny-bootstrap`.
+
+Read the [Getting Started page](http://jasny.github.io/bootstrap/getting-started/) for information on the framework contents, templates and examples, and more.
+
+### What's included
+
+Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
+
+```
+jasny-bootstrap/
+├── css/
+│   ├── jasny-bootstrap.css
+│   ├── jasny-bootstrap.min.css
+└── js/
+    ├── jasny-bootstrap.js
+    └── jasny-bootstrap.min.js
+```
+
+We provide compiled CSS and JS (`jasny-bootstrap.*`), as well as compiled and minified CSS and JS (`jasny-bootstrap.min.*`).
+
+Jasny Bootstrap should be loaded after Twitter Bootstrap.
+
+
+## Bugs and feature requests
+
+Have a bug or a feature request? [Please open a new issue](https://github.com/jasny/bootstrap/issues). Before opening any issue, please search for existing issues and read the [Issue Guidelines](https://github.com/necolas/issue-guidelines), written by [Nicolas Gallagher](https://github.com/necolas/).
+
+You may use [this JS Bin](http://jsbin.com/iKumuWo/1/edit) as a template for your bug reports.
+
+
+
+## Documentation
+
+Jasny Bootstrap's documentation, included in this repo in the root directory, is built with [Jekyll](http://jekyllrb.com) and publicly hosted on GitHub Pages at <http://jasny.github.io/bootstrap>. The docs may also be run locally.
+
+### Running documentation locally
+
+1. If necessary, [install Jekyll](http://jekyllrb.com/docs/installation) (requires v1.x).
+2. From the root `/bootstrap` directory, run `jekyll serve` in the command line.
+  - **Windows users:** run `chcp 65001` first to change the command prompt's character encoding ([code page](http://en.wikipedia.org/wiki/Windows_code_page)) to UTF-8 so Jekyll runs without errors.
+3. Open <http://localhost:9001> in your browser, and voilà.
+
+Learn more about using Jekyll by reading its [documentation](http://jekyllrb.com/docs/home/).
+
+### Documentation for previous releases
+
+Documentation for v2.3.1 has been made available for the time being at <http://jasny.github.io/bootstrap/2.3.1/> while folks transition to Bootstrap 3.
+
+[Previous releases](https://github.com/jasny/bootstrap/releases) and their documentation are also available for download.
+
+
+
+## Compiling CSS and JavaScript
+
+Bootstrap uses [Grunt](http://gruntjs.com/) with convenient methods for working with the framework. It's how we compile our code, run tests, and more. To use it, install the required dependencies as directed and then run some Grunt commands.
+
+### Install Grunt
+
+From the command line:
+
+1. Install `grunt-cli` globally with `npm install -g grunt-cli`.
+2. Navigate to the root `/bootstrap` directory, then run `npm install`. npm will look at [package.json](package.json) and automatically install the necessary local dependencies listed there.
+
+When completed, you'll be able to run the various Grunt commands provided from the command line.
+
+**Unfamiliar with `npm`? Don't have node installed?** That's a-okay. npm stands for [node packaged modules](http://npmjs.org/) and is a way to manage development dependencies through node.js. [Download and install node.js](http://nodejs.org/download/) before proceeding.
+
+### Available Grunt commands
+
+#### Build - `grunt`
+Run `grunt` to run tests locally and compile the CSS and JavaScript into `/dist`. **Uses [recess](http://twitter.github.io/recess/) and [UglifyJS](http://lisperator.net/uglifyjs/).**
+
+#### Only compile CSS and JavaScript - `grunt dist`
+`grunt dist` creates the `/dist` directory with compiled files. **Uses [recess](http://twitter.github.io/recess/) and [UglifyJS](http://lisperator.net/uglifyjs/).**
+
+#### Tests - `grunt test`
+Runs [JSHint](http://jshint.com) and [QUnit](http://qunitjs.com/) tests headlessly in [PhantomJS](http://phantomjs.org/) (used for CI).
+
+#### Watch - `grunt watch`
+This is a convenience method for watching just Less files and automatically building them whenever you save.
+
+### Troubleshooting dependencies
+
+Should you encounter problems with installing dependencies or running Grunt commands, uninstall all previous dependency versions (global and local). Then, rerun `npm install`.
+
+
+
+## Contributing
+
+Please read through our [contributing guidelines](https://github.com/jasny/bootstrap/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
+
+More over, if your pull request contains JavaScript patches or features, you must include relevant unit tests. All HTML and CSS should conform to the [Code Guide](http://github.com/mdo/code-guide), maintained by [Mark Otto](http://github.com/mdo).
+
+Editor preferences are available in the [editor config](.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
+
+## Community
+
+Keep track of development and community news.
+
+* Follow [@ArnoldDaniels on Twitter](http://twitter.com/ArnoldDaniels).
+* Have a question that's not a feature request or bug report? [Ask on stackoverflow.](http://stackoverflow.com/)
+
+
+
+## Versioning
+
+For transparency into our release cycle and in striving to maintain backward compatibility, Jasny Bootstrap is maintained under the Semantic Versioning guidelines. Sometimes we screw up, but we'll adhere to these rules whenever possible.
+
+Releases will be numbered with the following format:
 
 `<major>.<minor>.<patch>`
 
 And constructed with the following guidelines:
 
-* Breaking backward compatibility bumps the major (and resets the minor and patch)
-* New additions without breaking backward compatibility bumps the minor (and resets the patch)
-* Bug fixes and misc changes bumps the patch
+- Breaking backward compatibility **bumps the major** while resetting minor and patch
+- New additions without breaking backward compatibility **bumps the minor** while resetting the patch
+- Bug fixes and misc changes **bumps only the patch**
 
-For more information on SemVer, please visit http://semver.org/.
+For more information on SemVer, please visit <http://semver.org/>.
 
-
-
-Bug tracker
------------
-
-Have a bug? Please create an issue here on GitHub! Also, when filing please make sure you're familiar with [necolas's guidelines](https://github.com/necolas/issue-guidelines). thanks! <3
-
-https://github.com/twitter/bootstrap/issues
+__The major version will follow Twitter Bootstraps major version. This means backward compatibility will only be broken if Twitter Bootstrap does so.__
 
 
 
-Twitter account
----------------
+## Authors
 
-Keep up to date on announcements and more by following Bootstrap on Twitter, [@TwBootstrap](http://twitter.com/TwBootstrap).
+**Arnold Daniels**
 
-
-
-Blog
-----
-
-Read more detailed announcements, discussions, and more on [The Official Twitter Bootstrap Blog](http://blog.getbootstrap.com).
++ [http://twitter.com/ArnoldDaniels](http://twitter.com/ArnoldDaniels)
++ [http://github.com/jasny](http://github.com/jasny)
++ [http://jasny.net](http://jasny.net)
 
 
+## Copyright and license
 
-Mailing list
-------------
-
-Have a question? Ask on our mailing list!
-
-twitter-bootstrap@googlegroups.com
-
-http://groups.google.com/group/twitter-bootstrap
-
-
-
-IRC
----
-
-Server: irc.freenode.net
-
-Channel: ##twitter-bootstrap (the double ## is not a typo)
-
-
-
-Developers
-----------
-
-We have included a makefile with convenience methods for working with the Bootstrap library.
-
-+ **dependencies**
-Our makefile depends on you having recess, uglify.js, and jshint installed. To install, just run the following command in npm:
-
-```
-$ npm install recess uglify-js jshint -g
-```
-
-+ **build** - `make`
-Runs the recess compiler to rebuild the `/less` files and compiles the docs pages. Requires recess and uglify-js. <a href="http://twitter.github.com/bootstrap/less.html#compiling">Read more in our docs &raquo;</a>
-
-+ **test** - `make test`
-Runs jshint and qunit tests headlessly in phantom js (used for ci). Depends on having phatomjs installed.
-
-+ **watch** - `make watch`
-This is a convenience method for watching just Less files and automatically building them whenever you save. Requires the Watchr gem.
-
-
-Contributing
-------------
-
-Please make all pull requests against wip-* branches. Also, if your unit test contains javascript patches or features - you must include relevant unit tests. Thanks!
-
-
-Authors
--------
-
-**Mark Otto**
-
-+ http://twitter.com/mdo
-+ http://github.com/markdotto
-
-**Jacob Thornton**
-
-+ http://twitter.com/fat
-+ http://github.com/fat
-
-
-
-Copyright and license
----------------------
-
-Copyright 2012 Twitter, Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this work except in compliance with the License.
-You may obtain a copy of the License in the LICENSE file, or at:
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+Copyright 2013 Jasny BV under [the Apache 2.0 license](LICENSE).
